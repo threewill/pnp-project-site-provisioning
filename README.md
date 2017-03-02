@@ -6,7 +6,7 @@ A PowerShell PnP based provisioning process used when creating new ThreeWill pro
     1. [Install PnP-PowerShell](https://github.com/SharePoint/PnP-PowerShell)
 
 #How To Use
-Simply Execute the 'provisioning.ps1' script like so...
+Simply Execute the 'provision.ps1' script like so...
 ```powershell
 ./provision.ps1 -SiteUrl 'https://<<tenant name>>.sharepoint.com/sites/NewProjectSite' -Username <<youremail@whatever.com>> 
 ```    
