@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
+    <pnp:Preferences Author="Will Holland" Version="1.0" Generator="Hand Coded">        
+    </pnp:Preferences>
+    <pnp:Templates ID="ThreeWill-Provisioning-Templates">
+        <pnp:ProvisioningTemplate 
+            ID="RisksList" Version="1.0" Description="Provisions the Risks list to a site.">
+            <pnp:SiteFields>
+                <!-- Fields elements require the following properties: ID, Name, Required, Type -->
+                <!-- Risk Fields -->                
+                <Field Name="RiskCondition"
+                    ID="{56e0ce2b-4228-4584-abff-738600ea34ed}"
+                    DisplayName="Risk Condition"                                      
+                    StaticName="RiskCondition"                   
+                    Group="Risk Columns"
+                    Type="Text" 
+                    Description="Use this column to capture the likely cause of the risk.  Be detailed enough so that you can start forming mitigation plans."
+                    Required="False"/>
+                <Field Name="RiskConsequence"
+                    ID="{ed82da56-58b0-4750-9c9a-5b1c8be42952}"                   
+                    StaticName="RiskConsequence"
+                    DisplayName="Risk Consequence"
+                    Group="Risk Columns"
+                    Type="Text"
+                    Description="Use this column to capture the result of the risk, should it happen.  IF the consequences cannot be mitigated, you will have to deal with them in a contingency plan."
+                    Required="False" />
+                <Field Name="RiskProbability"
+                    ID="{ce647169-272d-42a3-97b7-33d97c1366fe}"                   
+                    StaticName="RiskProbability"
+                    DisplayName="Risk Probability"
+                    Group="Risk Columns"
+                    Type="Number"
+                    Percentage="TRUE"
+                    Min=".01"
+                    Max="1"
+                    Default=".5"
+                    Description="Likelihood of risk occurrence on a scale of 1%-100%" 
+                    Required="False" />
+                <Field Name="RiskImpact"
+                    ID="{f10ea1a4-9d91-43d4-a2e1-2faf51eea3f1}"                   
+                    StaticName="RiskImpact"
+                    DisplayName="Risk Impact"
+                    Group="Risk Columns"
+                    Type="Number"
+                    Min="1"
+                    Max="10"
+                    Description="Scale of 1 to 10 of the impact if the risk occurs"
+                    Required="False" />
+                <Field Name="RiskExposure"
+                    ID="{6c1b296c-b04b-4221-9eca-d6b3c948cfbc}"                   
+                    StaticName="RiskExposure"
+                    DisplayName="Risk Exposure"
+                    Description="Exposure=Impact*Probability"
+                    Group="Risk Columns"
+                    Type="Calculated" 
+                    ResultType="Text"
+                    ReadOnly="TRUE"
+                    Required="False" >
+                    <Formula>=[Risk Impact]*[Risk Probability]</Formula>
+                    <FieldRefs>
+                            <FieldRef Name='RiskImpact'/>
+                            <FieldRef Name='RiskProbability'/>
+                    </FieldRefs>
+                </Field>
+                <Field Name="RiskMitigation"
+                    ID="{c0e1b0b6-5b67-4cf7-986b-28d8417b390c}"                   
+                    StaticName="RiskMitigation"
+                    DisplayName="Risk Mitigation"
+                    Group="Risk Columns"
+                    RichText="FALSE"
+                    Type="Note"
+                    Description="Use this column to document what plans the team has to prevent the risk or to reduce the impact before occurrence.  This may require a separate more detailed plan"
+                    Required="False" />
+                <Field Name="RiskContingency"
+                    ID="{54fdba53-a2cd-4a1d-8486-7f4e04411286}"                   
+                    StaticName="RiskContingency"
+                    DisplayName="Risk Contingency"
+                    Group="Risk Columns"
+                    RichText="FALSE"
+                    Type="Note"
+                    Description="Use this column to identify what will need to be done if the risk  becomes reality.  This may require creating a separate, more detailed plan."
+                    Required="False" />
+                <Field Name="RiskTrigger"
+                    ID="{55c3f171-64e7-4283-a4c7-ce0b15b30f82}"                   
+                    StaticName="RiskTrigger"
+                    DisplayName="Risk Trigger"
+                    Group="Risk Columns"
+                    RichText="FALSE"
+                    Type="Note"
+                    Description="Use this column to identify what would prompt you to execute the contingency plan.  A trigger is usually a date or some sort of threshold."
+                    Required="False" />
+                <Field Name="Notes1"
+                    ID="{0d395f31-6147-4396-b20a-0042c93cccff}"                   
+                    StaticName="Notes1"
+                    DisplayName="Notes"
+                    Group="ThreeWill Columns"
+                    RichText="FALSE"
+                    Type="Note"
+                    Description="Field for notes. Changes are appended to existing text."
+                    Required="False" />
+                <Field Name="RiskStatus"
+                    ID="{79c10b56-8cac-4139-a4a9-a38c6c76a2e4}"                   
+                    StaticName="RiskStatus"
+                    DisplayName="Risk Status"
+                    Group="Risk Columns"                                    
+                    Type="Choice"
+                    Description="Status of Risk"
+                    Required="False" > 
+                    <CHOICES>
+                            <CHOICE>Open</CHOICE>
+                            <CHOICE>Closed (Issue)</CHOICE>
+                            <CHOICE>Resolved</CHOICE>
+                    </CHOICES>
+                    <Default>Open</Default>
+                </Field>
+                <Field Name="Priority"
+                    ID="{a8eb573e-9e11-481a-a8c9-1104a54b2fbd}"                   
+                    StaticName="Priority"
+                    DisplayName="Priority"
+                    Group="ThreeWill Columns"
+                    Type="Choice"
+                    Required="False" >
+                    <CHOICES>
+                            <CHOICE>(1) High</CHOICE>
+                            <CHOICE>(2) Normal</CHOICE>
+                            <CHOICE>(3) Low</CHOICE>
+                    </CHOICES>
+                    <Default>(2) Normal</Default>
+                </Field>
+            </pnp:SiteFields>
+            <pnp:ContentTypes>
+                <!-- ContentType elements require the following properties: ID, Description, Group, Name -->
+                <pnp:ContentType ID="0x01000A54902007C23C43BC7A49A7BB0D78F3" Description="Description of a particular risk" Group="ThreeWill Content Types" Name="Risk">
+                    <pnp:FieldRefs>
+                        <pnp:FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" Required="true"/>
+                        <pnp:FieldRef ID="{56e0ce2b-4228-4584-abff-738600ea34ed}" Name="RiskCondition" Required="false"/>
+                        <pnp:FieldRef ID="{ed82da56-58b0-4750-9c9a-5b1c8be42952}" Name="RiskConsequence" Required="false"/>
+                        <pnp:FieldRef ID="{ce647169-272d-42a3-97b7-33d97c1366fe}" Name="RiskProbability" Required="false"/>
+                        <pnp:FieldRef ID="{f10ea1a4-9d91-43d4-a2e1-2faf51eea3f1}" Name="RiskImpact" Required="false"/>
+                        <pnp:FieldRef ID="{6c1b296c-b04b-4221-9eca-d6b3c948cfbc}" Name="RiskExposure" Required="false"/>
+                        <pnp:FieldRef ID="{c0e1b0b6-5b67-4cf7-986b-28d8417b390c}" Name="RiskMitigation" Required="false"/>
+                        <pnp:FieldRef ID="{54fdba53-a2cd-4a1d-8486-7f4e04411286}" Name="RiskContingency" Required="false"/>
+                        <pnp:FieldRef ID="{55c3f171-64e7-4283-a4c7-ce0b15b30f82}" Name="RiskTrigger" Required="false"/>
+                        <pnp:FieldRef ID="{0d395f31-6147-4396-b20a-0042c93cccff}" Name="Notes1" Required="false"/>
+                        <pnp:FieldRef ID="{79c10b56-8cac-4139-a4a9-a38c6c76a2e4}" Name="RiskStatus" Required="true"/>
+                        <pnp:FieldRef ID="{a8eb573e-9e11-481a-a8c9-1104a54b2fbd}" Name="Priority" Required="false"/>
+                    </pnp:FieldRefs>                    
+                </pnp:ContentType>
+            </pnp:ContentTypes>
+            <pnp:Lists>
+                <pnp:ListInstance ContentTypesEnabled="true" RemoveExistingContentTypes="true" Title="Risks" Url="Lists/Risks" TemplateType="100" EnableVersioning="true">
+                    <pnp:ContentTypeBindings>
+                        <pnp:ContentTypeBinding ContentTypeID="0x01000A54902007C23C43BC7A49A7BB0D78F3" Default="true"/>                    
+                    </pnp:ContentTypeBindings>
+                    <pnp:Views RemoveExistingViews="true">
+                        <View Name="{39B09625-52AC-4200-8187-D607E9A73428}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="/Lists/Risks/AllItems.aspx" >
+                            <Query>
+                                <OrderBy>
+                                    <FieldRef Name="ID"/>
+                                </OrderBy>
+                            </Query>
+                            <ViewFields>
+                                <FieldRef Name="ID"/>
+                                <FieldRef Name="LinkTitle"/>
+                                <FieldRef Name="RiskCondition"/>
+                                <FieldRef Name="RiskConsequence"/>
+                                <FieldRef Name="RiskProbability"/>
+                                <FieldRef Name="RiskImpact"/>
+                                <FieldRef Name="RiskExposure"/>
+                                <FieldRef Name="RiskMitigation"/>
+                                <FieldRef Name="RiskContingency"/>
+                                <FieldRef Name="RiskTrigger"/>
+                                <FieldRef Name="Notes1"/>
+                                <FieldRef Name="RiskStatus"/>
+                                <FieldRef Name="Priority"/>
+                            </ViewFields>
+                            <RowLimit Paged="TRUE">30</RowLimit>
+                            <Aggregations Value="Off"/>
+                            <JSLink>clienttemplates.js</JSLink>
+                            <XslLink>main.xsl</XslLink>
+                            <Toolbar Type="Standard"/>
+                        </View>
+                        <View Name="{17C68DFB-D433-4E81-AB63-31F06DDBC781}" MobileView="TRUE" Type="HTML" DisplayName="Homepage View">
+                            <Query>
+                                <Where>
+                                    <Eq>
+                                        <FieldRef Name="Priority"/>
+                                        <Value Type="Text">(1) High</Value>
+                                    </Eq>
+                                </Where>
+                            </Query>
+                            <ViewFields>
+                                <FieldRef Name="ID"/>
+                                <FieldRef Name="LinkTitle"/>
+                                <FieldRef Name="RiskExposure"/>
+                                <FieldRef Name="RiskStatus"/>
+                                <FieldRef Name="Priority"/>
+                            </ViewFields>
+                            <RowLimit Paged="TRUE">30</RowLimit>
+                            <Aggregations Value="Off"/>
+                            <JSLink>clienttemplates.js</JSLink>
+                            <XslLink>main.xsl</XslLink>
+                            <Toolbar Type="Standard"/>
+                        </View>
+                        <View Name="{A0BA9809-7918-49D2-831A-D36500BD08C1}" MobileView="TRUE" Type="HTML" DisplayName="StatusReport" >
+                            <Query>
+                                <OrderBy>
+                                    <FieldRef Name="RiskImpact" Ascending="FALSE"/>
+                                </OrderBy>
+                            </Query>
+                            <ViewFields>
+                                <FieldRef Name="ID"/>
+                                <FieldRef Name="LinkTitle"/>
+                                <FieldRef Name="RiskConsequence"/>
+                                <FieldRef Name="RiskMitigation"/>
+                                <FieldRef Name="RiskProbability"/>
+                                <FieldRef Name="RiskExposure"/>
+                                <FieldRef Name="RiskImpact"/>
+                            </ViewFields>
+                            <RowLimit Paged="TRUE">30</RowLimit>
+                            <Aggregations Value="Off"/>
+                            <JSLink>clienttemplates.js</JSLink>
+                            <XslLink Default="TRUE">main.xsl</XslLink>
+                            <Toolbar Type="Standard"/>
+                        </View>                    
+                    </pnp:Views>                
+                </pnp:ListInstance>
+            </pnp:Lists>
+        </pnp:ProvisioningTemplate>
+    </pnp:Templates>
+</pnp:Provisioning>
