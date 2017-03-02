@@ -1,5 +1,5 @@
 #Introduction 
-Repo for the LazerSpot Operations and Site Dashboards.
+A PowerShell PnP based provisioning process used when creating new ThreeWill project sites.
 
 #Getting Started
 1.	Installation process
