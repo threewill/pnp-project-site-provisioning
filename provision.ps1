@@ -24,7 +24,7 @@ if($Log){
 if([String]::IsNullOrWhiteSpace($Description)){
     $Description = "Office 365 Group for the $ProjectName ($ProjectCode) project."     
 }
-$Credentials = New-Object System.Management.Automation.PSCredential($Username, $Password)
+
 try{    
     Write-Host "Connecting to Microsoft Graph..." -NoNewline
     Connect-PnPMicrosoftGraph -Scopes "Group.ReadWrite.All","User.Read.All"    
