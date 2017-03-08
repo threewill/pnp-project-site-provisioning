@@ -18,7 +18,7 @@ param(
 )
 Set-StrictMode -Version 5.0
 if($Log){        
-    Set-SPOTraceLog -On -Level Debug -LogFile ".\TraceLogs\$(Get-Date -Format FileDateTime).log"
+    Set-PnPTraceLog -On -Level Debug -LogFile ".\TraceLogs\$(Get-Date -Format FileDateTime).log"
 }
 
 if([String]::IsNullOrWhiteSpace($Description)){
@@ -39,7 +39,7 @@ try{
     Write-Host "Connected!" -ForegroundColor Green
 
     Write-Host "Adding standard lists..." -NoNewline
-    Apply-SPOProvisioningTemplate -Path ".\schema.xml"
+    Apply-PnPProvisioningTemplate -Path ".\schema.xml"
     Write-Host "Completed!" -ForegroundColor Green
 }
 catch{
