@@ -6,13 +6,13 @@ param(
     [string]$ProjectName,
     
     [Parameter(Mandatory=$false)]
-    [string]$GroupDescription,
+    [string]$Description,
     
     [Parameter(Mandatory=$false)]
-    [string[]]$GroupOwners,
+    [string[]]$Owners,
     
     [Parameter(Mandatory=$false)]
-    [string[]]$GroupMembers,
+    [string[]]$Members,
 
     [switch]$Log
 )
@@ -21,21 +21,21 @@ if($Log){
     Set-SPOTraceLog -On -Level Debug -LogFile ".\TraceLogs\$(Get-Date -Format FileDateTime).log"
 }
 
-if([String]::IsNullOrWhiteSpace($GroupDescription)){
-    $GroupDescription = "Office 365 Group for the $ProjectName ($ProjectCode) project."     
+if([String]::IsNullOrWhiteSpace($Description)){
+    $Description = "Office 365 Group for the $ProjectName ($ProjectCode) project."     
 }
-
+$Credentials = New-Object System.Management.Automation.PSCredential($Username, $Password)
 try{    
     Write-Host "Connecting to Microsoft Graph..." -NoNewline
     Connect-PnPMicrosoftGraph -Scopes "Group.ReadWrite.All","User.Read.All"    
     Write-Host "Connected!" -ForegroundColor Green
     
     Write-Host "Creating Unified Group..." -NoNewline
-    $NewUnifiedGroup = New-PnPUnifiedGroup -DisplayName $ProjectName -Description $GroupDescription -MailNickname $ProjectCode -Owners $GroupOwners -Members $GroupMembers
+    $NewUnifiedGroup = New-PnPUnifiedGroup -DisplayName $ProjectName -Description $Description -MailNickname $ProjectCode -Owners $Owners -Members $Members
     Write-Host "Done!" -ForegroundColor Green
 
     Write-Host "Connecting to new Site '$($NewUnifiedGroup.SiteUrl)'..." -NoNewline
-    Connect-PnPOnline $NewUnifiedGroup.SiteUrl -Credentials $(Get-Credential -Message "Enter Credentials for $($NewUnifiedGroup.SiteUrl)")
+    Connect-PnPOnline $NewUnifiedGroup.SiteUrl -UseWebLogin #-Credentials $Credentials #$(Get-Credential -Message "Enter Credentials for $($NewUnifiedGroup.SiteUrl)")
     Write-Host "Connected!" -ForegroundColor Green
 
     Write-Host "Adding standard lists..." -NoNewline
