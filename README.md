@@ -68,4 +68,4 @@ Currently, this project uses the '2016-05' version of the [PnP Provisioning-Sche
 
 [Click Here to view a sample](https://github.com/SharePoint/PnP-Provisioning-Schema/blob/master/Samples/ProvisioningSchema-2016-05-FullSample-02.xml) 
 
-[msgraph-login]: https://github.com/threewill/pnp-project-site-provisioning/images/pnp-msgraph-login.jpg "Microsoft Graph Login Window"
+[msgraph-login]: https://github.com/threewill/pnp-project-site-provisioning/blob/master/images/pnp-msgraph-login.jpg "Microsoft Graph Login Window"
