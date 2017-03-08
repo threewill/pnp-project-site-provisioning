@@ -6,8 +6,6 @@
         <pnp:ProvisioningTemplate 
             ID="RisksList" Version="1.0" Description="Provisions the Risks list to a site.">
             <pnp:SiteFields>
-                <!-- Fields elements require the following properties: ID, Name, Required, Type -->
-                <!-- Risk Fields -->                
                 <Field Name="RiskCondition"
                     ID="{56e0ce2b-4228-4584-abff-738600ea34ed}"
                     DisplayName="Risk Condition"                                      
@@ -56,7 +54,7 @@
                     ResultType="Text"
                     ReadOnly="TRUE"
                     Required="False" >
-                    <Formula>=[Risk Impact]*[Risk Probability]</Formula>
+                    <Formula>=[RiskImpact]*[RiskProbability]</Formula>
                     <FieldRefs>
                             <FieldRef Name='RiskImpact'/>
                             <FieldRef Name='RiskProbability'/>
@@ -128,8 +126,7 @@
                     <Default>(2) Normal</Default>
                 </Field>
             </pnp:SiteFields>
-            <pnp:ContentTypes>
-                <!-- ContentType elements require the following properties: ID, Description, Group, Name -->
+            <pnp:ContentTypes>                
                 <pnp:ContentType ID="0x01000A54902007C23C43BC7A49A7BB0D78F3" Description="Description of a particular risk" Group="ThreeWill Content Types" Name="Risk">
                     <pnp:FieldRefs>
                         <pnp:FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" Required="true"/>
