@@ -39,13 +39,13 @@ Provisions a New Office 365 Group titled 'PnP Demo 01', a description of 'Contos
 
 ###Example 3
 ```powershell
-./provision.ps1 -ProjectCode "pnp-demo-01" -ProjectName "PnP Demo 01" -Owners "foo@contoso.com, bar@contoso.com"
+./provision.ps1 -ProjectCode "pnp-demo-01" -ProjectName "PnP Demo 01" -Owners "foo@contoso.com", "bar@contoso.com"
 ```
 Provisions a New Office 365 Group titled 'PnP Demo 01', a description of 'Office 365 Group for the PnP Demo 01 (pnp-demo-01) project.', a team site at https://contoso.sharepoint.com/teams/pnp-demo-01, and with a group email address of pnp-demo-01@contoso.com. The users 'foo@contoso.com' and 'bar@constoso.com', in addition to the user running the script, will be listed as the group owners.
 
 ###Example 3
 ```powershell
-./provision.ps1 -ProjectCode "pnp-demo-01" -ProjectName "PnP Demo 01" -Members "foo@contoso.com, bar@contoso.com"
+./provision.ps1 -ProjectCode "pnp-demo-01" -ProjectName "PnP Demo 01" -Members "foo@contoso.com", "bar@contoso.com"
 ```
 Provisions a New Office 365 Group titled 'PnP Demo 01', a description of 'Office 365 Group for the PnP Demo 01 (pnp-demo-01) project.', a team site at https://contoso.sharepoint.com/teams/pnp-demo-01, and with a group email address of pnp-demo-01@contoso.com. The users 'foo@contoso.com' and 'bar@constoso.com' will be listed as the group members.
 
