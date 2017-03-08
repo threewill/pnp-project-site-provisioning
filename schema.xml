@@ -125,9 +125,9 @@
                     </CHOICES>
                     <Default>(2) Normal</Default>
                 </Field>
-            </pnp:SiteFields>
-            <pnp:ContentTypes>                
-                <pnp:ContentType ID="0x01000A54902007C23C43BC7A49A7BB0D78F3" Description="Description of a particular risk" Group="ThreeWill Content Types" Name="Risk">
+            </pnp:SiteFields>            
+            <pnp:Lists>
+                <pnp:ListInstance ContentTypesEnabled="true" RemoveExistingContentTypes="true" Title="Risks" Url="Lists/Risks" TemplateType="100" EnableVersioning="true">                    
                     <pnp:FieldRefs>
                         <pnp:FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" Required="true"/>
                         <pnp:FieldRef ID="{56e0ce2b-4228-4584-abff-738600ea34ed}" Name="RiskCondition" Required="false"/>
@@ -141,14 +141,7 @@
                         <pnp:FieldRef ID="{0d395f31-6147-4396-b20a-0042c93cccff}" Name="Notes1" Required="false"/>
                         <pnp:FieldRef ID="{79c10b56-8cac-4139-a4a9-a38c6c76a2e4}" Name="RiskStatus" Required="true"/>
                         <pnp:FieldRef ID="{a8eb573e-9e11-481a-a8c9-1104a54b2fbd}" Name="Priority" Required="false"/>
-                    </pnp:FieldRefs>                    
-                </pnp:ContentType>
-            </pnp:ContentTypes>
-            <pnp:Lists>
-                <pnp:ListInstance ContentTypesEnabled="true" RemoveExistingContentTypes="true" Title="Risks" Url="Lists/Risks" TemplateType="100" EnableVersioning="true">
-                    <pnp:ContentTypeBindings>
-                        <pnp:ContentTypeBinding ContentTypeID="0x01000A54902007C23C43BC7A49A7BB0D78F3" Default="true"/>                    
-                    </pnp:ContentTypeBindings>
+                    </pnp:FieldRefs>  
                     <pnp:Views RemoveExistingViews="true">
                         <View Name="{39B09625-52AC-4200-8187-D607E9A73428}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="/Lists/Risks/AllItems.aspx" >
                             <Query>
