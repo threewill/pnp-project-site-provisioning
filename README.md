@@ -6,7 +6,12 @@ The only thing requires is to [Install PnP-PowerShell](https://github.com/ShareP
 
 ##Syntax
 ```powershell
-./provision.ps1 -ProjectCode <String> -ProjectName <String> [-Description <String>] [-Owners <String[]>] [-Members <String[]>] [-Log [<SwitchParameter>]]
+./provision.ps1 -ProjectCode <String> 
+                -ProjectName <String> 
+                [-Description <String>] 
+                [-Owners <String[]>] 
+                [-Members <String[]>] 
+                [-Log [<SwitchParameter>]]
 ```
 ##Parameters
 Parameter|Type|Required|Description
