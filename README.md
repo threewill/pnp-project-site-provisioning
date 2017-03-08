@@ -51,17 +51,17 @@ Provisions a New Office 365 Group titled 'PnP Demo 01', a description of 'Office
 
 
 ###Running the Script
-1. Open a PowerShell Window and set the directory to the folder containing the 'provision.ps1' script
+* Open a PowerShell Window and set the directory to the folder containing the 'provision.ps1' script
 ```powershell
 cd c:/github/pnp-project-site-provisioning
 ```
-2. Execute the script with whatever parameters necessary.
+* Execute the script with whatever parameters necessary.
 ```powershell
 ./provision.ps1 -ProjectCode "pnp-demo-01" -ProjectName "PnP Demo 01"
 ```
-3. When prompted, enter the credentials for the tenant you wish to provision this new group in.
+* When prompted, enter the credentials for the tenant you wish to provision this new group in.
 ![Microsoft Graph Login][msgraph-login]
-4. Wait for the script to finish.
+* Wait for the script to finish.
 
 ###Developer Notes
 Currently, this project uses the '2016-05' version of the [PnP Provisioning-Schema](https://github.com/SharePoint/PnP-Provisioning-Schema)
