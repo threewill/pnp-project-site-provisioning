@@ -2,7 +2,7 @@
 A PowerShell PnP based provisioning process used when creating new ThreeWill project sites.
 
 ##Getting Started
-The only thing requires is to [Install PnP-PowerShell](https://github.com/SharePoint/PnP-PowerShell)
+The only thing required is to [Install PnP-PowerShell](https://github.com/SharePoint/PnP-PowerShell)
 
 ##Syntax
 ```powershell
