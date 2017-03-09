@@ -158,7 +158,7 @@
                     Group="Project Contact Columns"
                     Type="Text" 
                     Description="Primary time zone for contact."
-                    Required="False"/>
+                    Required="False"/>                             
             </pnp:SiteFields>            
             <pnp:Lists>
                 <pnp:ListInstance ContentTypesEnabled="true" RemoveExistingContentTypes="true" Title="Risks" Url="Lists/Risks" TemplateType="100" EnableVersioning="true" OnQuickLaunch="true">                    
@@ -249,7 +249,7 @@
                         </View>                    
                     </pnp:Views>                
                 </pnp:ListInstance>
-                <pnp:ListInstance ContentTypesEnabled="true" RemoveExistingContentTypes="true" Title="Project Contacts" Url="Lists/ProjectContacts" TemplateType="100" EnableVersioning="true" OnQuickLaunch="true">                    
+                <pnp:ListInstance ContentTypesEnabled="true" RemoveExistingContentTypes="true" Title="Project Contacts" Url="Lists/ProjectContacts" TemplateType="105" EnableVersioning="true" OnQuickLaunch="true">                    
                     <pnp:FieldRefs>
                         <pnp:FieldRef ID="fc2e188e-ba91-48c9-9dd3-16431afddd50" Name="WorkAddress" Required="false"/>
                         <pnp:FieldRef ID="fd630629-c165-4513-b43c-fdb16b86a14d" Name="WorkPhone" Required="false"/>
@@ -257,7 +257,7 @@
                         <pnp:FieldRef ID="038d1503-4629-40f6-adaf-b47d1ab2d4fe" Name="Company" Required="false"/>
                         <pnp:FieldRef ID="c60763e1-0b93-468c-ab17-70b4e776c432" Name="ContactTimeZone" Required="false"/>
                         <pnp:FieldRef ID="3f3a5c85-9d5a-4663-b925-8b68a678ea3a" Name="WorkCountry" Required="false"/>
-                        <pnp:FieldRef ID="fce16b4c-fe53-4793-aaab-b4892e736d15" Name="EMail" Required="false"/>
+                        <pnp:FieldRef ID="fce16b4c-fe53-4793-aaab-b4892e736d15" Name="Email" Required="false"/>
                         <pnp:FieldRef ID="9d1cacc8-f452-4bc1-a751-050595ad96e1" Name="WorkFax" Required="false"/>
                         <pnp:FieldRef ID="4a722dd4-d406-4356-93f9-2550b8f50dd0" Name="FirstName" Required="false"/>
                         <pnp:FieldRef ID="475c2610-c157-4b91-9e2d-6855031b3538" Name="FullName" Required="false"/>
@@ -286,7 +286,7 @@
                                 <FieldRef Name="Company"/>
                                 <FieldRef Name="WorkPhone"/>
                                 <FieldRef Name="HomePhone"/>
-                                <FieldRef Name="EMail"/>
+                                <FieldRef Name="Email"/>
                             </ViewFields>
                             <RowLimit Paged="TRUE">30</RowLimit>
                             <JSLink>clienttemplates.js</JSLink>
@@ -303,7 +303,7 @@
                                 <FieldRef Name="ProjectRole"/>
                                 <FieldRef Name="WorkPhone"/>
                                 <FieldRef Name="CellPhone"/>
-                                <FieldRef Name="EMail"/>
+                                <FieldRef Name="Email"/>
                                 <FieldRef Name="ContactTimeZone"/>
                                 <FieldRef Name="Modified"/>
                                 <FieldRef Name="Editor"/>
@@ -316,7 +316,12 @@
                         </View>                
                     </pnp:Views>                
                 </pnp:ListInstance>
-            </pnp:Lists>
+                <pnp:ListInstance ContentTypesEnabled="true" RemoveExistingContentTypes="false" Title="Project Calendar" Url="Lists/Project Calendar" TemplateType="106" EnableVersioning="true" OnQuickLaunch="true">                    
+                    <pnp:ContentTypeBindings>
+                        <pnp:ContentTypeBinding ContentTypeID='0x0102' Default="true" />
+                    </pnp:ContentTypeBindings>                                 
+                </pnp:ListInstance>
+            </pnp:Lists>            
         </pnp:ProvisioningTemplate>
     </pnp:Templates>
 </pnp:Provisioning>
