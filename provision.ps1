@@ -25,16 +25,25 @@ if([String]::IsNullOrWhiteSpace($Description)){
     $Description = "Office 365 Group for the $ProjectName ($ProjectCode) project."     
 }
 
-try{    
+try {    
     Write-Host "Connecting to Microsoft Graph..." -NoNewline
     Connect-PnPMicrosoftGraph -Scopes "Group.ReadWrite.All","User.Read.All"    
     Write-Host "Connected!" -ForegroundColor Green
-    
-    Write-Host "Creating Unified Group..." -NoNewline
-    $NewUnifiedGroup = New-PnPUnifiedGroup -DisplayName $ProjectName -Description $Description -MailNickname $ProjectCode -Owners $Owners -Members $Members
-    Write-Host "Done!" -ForegroundColor Green
 
-    Write-Host "Connecting to new Site '$($NewUnifiedGroup.SiteUrl)'..." -NoNewline
+    Write-Host "Checking for Unified Group..." -NoNewline
+    $NewUnifiedGroup = Get-PnPUnifiedGroup | Where-Object {$_.SiteUrl -like "*$ProjectCode" }
+    
+    if ($NewUnifiedGroup -eq $null) 
+    {
+        Write-Host "Creating Unified Group..." -NoNewline
+        $NewUnifiedGroup = New-PnPUnifiedGroup -DisplayName $ProjectName -Description $Description -MailNickname $ProjectCode -Owners $Owners -Members $Members
+        Write-Host "Done!" -ForegroundColor Green
+    }
+    else
+    {
+        Write-Host "Unified Group already exists..." -NoNewline    
+    }
+    Write-Host "Connecting to Unified Group Site '$($NewUnifiedGroup.SiteUrl)'..." -NoNewline
     Connect-PnPOnline $NewUnifiedGroup.SiteUrl -UseWebLogin #-Credentials $Credentials #$(Get-Credential -Message "Enter Credentials for $($NewUnifiedGroup.SiteUrl)")
     Write-Host "Connected!" -ForegroundColor Green
 
@@ -42,7 +51,7 @@ try{
     Apply-PnPProvisioningTemplate -Path ".\schema.xml"
     Write-Host "Completed!" -ForegroundColor Green
 }
-catch{
+catch {
     #Have to catch and throw error yourself to stop the script from executing.
     Write-Host "Failed" -ForegroundColor Red    
     throw $_     
