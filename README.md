@@ -72,6 +72,7 @@ cd c:/github/pnp-project-site-provisioning
 * When prompted, enter the credentials for the tenant you wish to provision this new group in.
 ![Microsoft Graph Login][msgraph-login]
 * Wait for the script to finish.
+* You may be prompted with additonal login windows with this version. If so, simply login again or select the correct profile. 
 
 ### Developer Notes
 Currently, this project uses the '2016-05' version of the [PnP Provisioning-Schema](https://github.com/SharePoint/PnP-Provisioning-Schema)
