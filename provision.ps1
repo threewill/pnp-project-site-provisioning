@@ -25,19 +25,26 @@ if([String]::IsNullOrWhiteSpace($Description)){
     $Description = "Office 365 Group for the $ProjectName ($ProjectCode) project."     
 }
 
-
 Connect-MicrosoftTeams
 
-# Add a new Team 
-$Group = New-Team -Alias $ProjectCode.ToLower() -DisplayName "Program - $ProjectName" -AccessType "public" -AddCreatorAsMember $true -Description $Description
-Write-Host "Created Group $($Group.GroupId)..." -NoNewline
+# Try to make the script idempotent if it needs to run again
+$existingTeam = Get-Team | Where-Object {$_.DisplayName -like '*$($ProjectCode)*'}
+if ($existingTeam -eq $null )
+{
+    Write-Host "Creating Team ..." 
+    # Add a new Team 
+    $Group = New-Team -Alias $ProjectCode.ToLower() -DisplayName "Program - $ProjectName" -AccessType "public" -AddCreatorAsMember $true -Description $Description
+    Write-Host "Created Group $($Group.GroupId)..."
 
-# Create default channels
-Write-Host "Creating default Channels..." -NoNewline
-New-TeamChannel -GroupId $Group.GroupId -DisplayName "Deliverables"
-New-TeamChannel -GroupId $Group.GroupId -DisplayName "Project Management"
+    # Create default channels
+    Write-Host "Creating default Channels..." 
+    New-TeamChannel -GroupId $Group.GroupId -DisplayName "Deliverables"
+    New-TeamChannel -GroupId $Group.GroupId -DisplayName "Project Management"
 
-# Add Team users 
+    #TODO: Add Team users 
+} else {
+    Write-Host "Team with Display name containing $($ProjectCode) found ..." 
+}
 
 
  try {    
@@ -45,19 +52,9 @@ New-TeamChannel -GroupId $Group.GroupId -DisplayName "Project Management"
     Connect-PnPMicrosoftGraph -Scopes "Group.ReadWrite.All","User.Read.All"    
     Write-Host "Connected!" -ForegroundColor Green
 
-     Write-Host "Checking for Unified Group..." -NoNewline
-     $NewUnifiedGroup = Get-PnPUnifiedGroup | Where-Object {$_.SiteUrl -like "*$ProjectCode" }
+    Write-Host "Checking for Unified Group..." -NoNewline
+    $NewUnifiedGroup = Get-PnPUnifiedGroup | Where-Object {$_.SiteUrl -like "*$ProjectCode" }
     
-#     if ($NewUnifiedGroup -eq $null) 
-#     {
-#         Write-Host "Creating Unified Group..." -NoNewline
-#         $NewUnifiedGroup = New-PnPUnifiedGroup -DisplayName $ProjectName -Description $Description -MailNickname $ProjectCode -Owners $Owners -Members $Members
-#         Write-Host "Done!" -ForegroundColor Green
-#     }
-#     else
-#     {
-#         Write-Host "Unified Group already exists..." -NoNewline    
-#     }
     Write-Host "Connecting to Unified Group Site '$($NewUnifiedGroup.SiteUrl)'..." -NoNewline
     Connect-PnPOnline $NewUnifiedGroup.SiteUrl -UseWebLogin #-Credentials $Credentials #$(Get-Credential -Message "Enter Credentials for $($NewUnifiedGroup.SiteUrl)")
     Write-Host "Connected!" -ForegroundColor Green
