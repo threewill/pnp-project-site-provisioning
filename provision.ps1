@@ -27,6 +27,7 @@ if([String]::IsNullOrWhiteSpace($Description)){
 
 Connect-MicrosoftTeams
 
+# Try to make the script idempotent if it needs to run again
 $existingTeam = Get-Team | Where-Object {$_.DisplayName -like '*$($ProjectCode)*'}
 if ($existingTeam -eq $null )
 {
@@ -54,6 +55,7 @@ if ($existingTeam -eq $null )
         Write-Host "complete!" -ForegroundColor Green
     }
 
+    #TODO: Add Team users 
 } else {
     Write-Host "Team with Display name containing $($ProjectCode) found ..." 
 }
@@ -61,7 +63,7 @@ if ($existingTeam -eq $null )
 
  try {    
     Write-Host "Connecting to Microsoft Graph..." -NoNewline
-    Connect-PnPMicrosoftGraph -Scopes "Group.ReadWrite.All","User.Read.All"    
+    Connect-PnPOnline -Scopes "Group.ReadWrite.All","User.Read.All"    
     Write-Host "Connected!" -ForegroundColor Green
 
     Write-Host "Checking for Unified Group..." -NoNewline
