@@ -49,14 +49,14 @@ if ($existingTeam -eq $null )
 
  try {    
     Write-Host "Connecting to Microsoft Graph..." -NoNewline
-    Connect-PnPMicrosoftGraph -Scopes "Group.ReadWrite.All","User.Read.All"    
+    Connect-PnPOnline -Scopes "Group.ReadWrite.All","User.Read.All"    
     Write-Host "Connected!" -ForegroundColor Green
 
     Write-Host "Checking for Unified Group..." -NoNewline
     $NewUnifiedGroup = Get-PnPUnifiedGroup | Where-Object {$_.SiteUrl -like "*$ProjectCode" }
     
     Write-Host "Connecting to Unified Group Site '$($NewUnifiedGroup.SiteUrl)'..." -NoNewline
-    Connect-PnPOnline $NewUnifiedGroup.SiteUrl -UseWebLogin #-Credentials $Credentials #$(Get-Credential -Message "Enter Credentials for $($NewUnifiedGroup.SiteUrl)")
+    Connect-PnPOnline $NewUnifiedGroup.SiteUrl -UseWebLogin 
     Write-Host "Connected!" -ForegroundColor Green
 
     Write-Host "Adding standard lists..." -NoNewline
