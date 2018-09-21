@@ -10,7 +10,7 @@ The script is also using a **preview**  version of the Microsoft-Teams cmdlets, 
 The script requires two PowerShell modules to be installed.  
 
 * [SharePointPnPPowerShellOnline](https://github.com/SharePoint/PnP-PowerShell) module using ```Install-Module SharePointPnPPowerShellOnline``` 
-* [Microsoft-Teams](https://blogs.technet.microsoft.com/skypehybridguy/2017/11/07/microsoft-teams-powershell-support/) module using ```Install-Module Microsoft-Teams```  
+* [Microsoft-Teams](https://blogs.technet.microsoft.com/skypehybridguy/2017/11/07/microsoft-teams-powershell-support/) module using ```Install-Module MicrosoftTeams```  
 
 
 
