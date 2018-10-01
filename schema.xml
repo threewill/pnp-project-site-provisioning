@@ -25,13 +25,13 @@
         </Field>
       </pnp:SiteFields>
       <pnp:Lists>
-        <pnp:ListInstance Title="Risks" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Risks" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" ContentTypesEnabled="true" DefaultDisplayFormUrl="{site}/Lists/Risks/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Risks/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Risks/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=44" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+        <pnp:ListInstance Title="Risks" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Risks" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" ContentTypesEnabled="true" DefaultDisplayFormUrl="{site}/Lists/Risks/DispForm.aspx" DefaultEditFormUrl="{sitecollection}/Lists/Risks/EditForm.aspx" DefaultNewFormUrl="{sitecollection}/Lists/Risks/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=44" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
           <pnp:ContentTypeBindings>
             <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
           </pnp:ContentTypeBindings>
           <pnp:Views>
-            <View Name="{A92E80EB-4D05-485D-8EDD-3FA693450509}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="/teams/pool-06/Lists/Risks/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=44">
+            <View Name="{A92E80EB-4D05-485D-8EDD-3FA693450509}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{sitecollection}/Lists/Risks/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=44">
               <Query>
                 <OrderBy>
                   <FieldRef Name="ID" />
@@ -55,7 +55,7 @@
               <RowLimit Paged="TRUE">30</RowLimit>
               <JSLink>clienttemplates.js</JSLink>
             </View>
-            <View Name="{E424222B-AAB1-4B54-B5B2-BA3A819D38DD}" MobileView="TRUE" Type="HTML" DisplayName="Homepage View" Url="/teams/pool-06/Lists/Risks/Homepage View.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=44">
+            <View Name="{E424222B-AAB1-4B54-B5B2-BA3A819D38DD}" MobileView="TRUE" Type="HTML" DisplayName="Homepage View" Url="{sitecollection}/Lists/Risks/Homepage View.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=44">
               <Query>
                 <Where>
                   <Eq>
@@ -74,7 +74,7 @@
               <RowLimit Paged="TRUE">30</RowLimit>
               <JSLink>clienttemplates.js</JSLink>
             </View>
-            <View Name="{CDB52CD5-AFDF-41C3-AE24-1CEAEA5992DC}" MobileView="TRUE" Type="HTML" DisplayName="StatusReport" Url="/teams/pool-06/Lists/Risks/StatusReport.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=44">
+            <View Name="{CDB52CD5-AFDF-41C3-AE24-1CEAEA5992DC}" MobileView="TRUE" Type="HTML" DisplayName="StatusReport" Url="{sitecollection}/Lists/Risks/StatusReport.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=44">
               <Query>
                 <OrderBy>
                   <FieldRef Name="RiskExposure" Ascending="FALSE" />
