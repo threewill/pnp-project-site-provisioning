@@ -74,7 +74,7 @@ if ($existingTeam -eq $null )
     Write-Host "Connected!" -ForegroundColor Green
 
     Write-Host "Adding standard Risk columns, ctypes, and list..." -NoNewline
-    Apply-PnPProvisioningTemplate -Path ".\risks-schema.xml"
+    Apply-PnPProvisioningTemplate -Path ".\risks-template.xml"
     Write-Host "Completed!" -ForegroundColor Green
 
     Write-Host "Adding standard Status Report columns, ctypes..." -NoNewline
