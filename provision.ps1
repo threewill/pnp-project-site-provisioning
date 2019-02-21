@@ -73,9 +73,14 @@ if ($existingTeam -eq $null )
     Connect-PnPOnline $NewUnifiedGroup.SiteUrl -UseWebLogin 
     Write-Host "Connected!" -ForegroundColor Green
 
-    Write-Host "Adding standard lists..." -NoNewline
-    Apply-PnPProvisioningTemplate -Path ".\schema.xml"
+    Write-Host "Adding standard Risk columns, ctypes, and list..." -NoNewline
+    Apply-PnPProvisioningTemplate -Path ".\risks-schema.xml"
     Write-Host "Completed!" -ForegroundColor Green
+
+    Write-Host "Adding standard Status Report columns, ctypes..." -NoNewline
+    Apply-PnPProvisioningTemplate -Path ".\statusreport-template.xml"
+    Write-Host "Completed!" -ForegroundColor Green
+
 }
 catch {
     #Have to catch and throw error yourself to stop the script from executing.
