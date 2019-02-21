@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2018/05/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=2.26.1805.1, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-B39CF40ABB84404285233B27C1C5815A">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-B39CF40ABB84404285233B27C1C5815A" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+      <pnp:SiteFields>
+        <Field Type="Text" DisplayName="Project Name" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="ThreeWill Columns" ID="{351fbb09-047b-412e-9bca-9e66bafd8eb3}" SourceID="{233000b3-88a5-4ca2-a098-fba9b0a88c25}" StaticName="Project_x0020_Name" Name="Project_x0020_Name">
+        </Field>
+        <Field Type="Currency" DisplayName="Budget Dollars" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" LCID="1033" Group="ThreeWill Columns" ID="{3a61e30c-ce63-4f83-9fec-5e36b0a34232}" SourceID="{233000b3-88a5-4ca2-a098-fba9b0a88c25}" StaticName="Budget_x0020_Dollars" Name="Budget_x0020_Dollars">
+        </Field>
+        <Field Type="Number" DisplayName="Budget Hours" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Decimals="2" Group="ThreeWill Columns" ID="{9f256629-e66e-4811-9188-6623c9e4ad5d}" SourceID="{233000b3-88a5-4ca2-a098-fba9b0a88c25}" StaticName="Budget_x0020_Hours" Name="Budget_x0020_Hours">
+        </Field>
+        <Field Type="Text" DisplayName="Client" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="ThreeWill Columns" ID="{5079442b-3544-421a-a1e7-ba5600f16196}" SourceID="{233000b3-88a5-4ca2-a098-fba9b0a88c25}" StaticName="Client" Name="Client">
+        </Field>
+        <Field Type="Number" DisplayName="Plan Hours To-Date" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Decimals="2" Group="ThreeWill Columns" ID="{6d24cb34-9fe5-40f8-909d-3409e3ae828e}" SourceID="{233000b3-88a5-4ca2-a098-fba9b0a88c25}" StaticName="Plan_x0020_Hours_x0020_To-Date" Name="Plan_x0020_Hours_x0020_To-Date">
+        </Field>
+        <Field Type="Text" DisplayName="Project Code" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="ThreeWill Columns" ID="{d999ce4d-08a0-47da-9013-fddbf6385e6b}" SourceID="{233000b3-88a5-4ca2-a098-fba9b0a88c25}" StaticName="Project_x0020_Code" Name="Project_x0020_Code">
+        </Field>
+        <Field Type="DateTime" DisplayName="Next Period Start" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" Group="ThreeWill Columns" FriendlyDisplayFormat="Disabled" ID="{8d42cd7d-de94-4818-9ea0-93054a3ec239}" SourceID="{233000b3-88a5-4ca2-a098-fba9b0a88c25}" StaticName="Next_x0020_Period_x0020_Start" Name="Next_x0020_Period_x0020_Start">
+        </Field>
+        <Field Type="Currency" DisplayName="Actual Dollars To-Date" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" LCID="1033" Group="ThreeWill Columns" ID="{4c9e6291-2de6-4307-b42d-c5bcea55c4ec}" SourceID="{233000b3-88a5-4ca2-a098-fba9b0a88c25}" StaticName="Actual_x0020_Dollars_x0020_To-Date" Name="Actual_x0020_Dollars_x0020_To-Date"></Field>
+        <Field Type="Currency" DisplayName="Plan Dollars To-Date" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" LCID="1033" Group="ThreeWill Columns" ID="{e425aed6-2b95-4811-9a74-1faff8676918}" SourceID="{233000b3-88a5-4ca2-a098-fba9b0a88c25}" StaticName="Plan_x0020_Dollars_x0020_To-Date" Name="Plan_x0020_Dollars_x0020_To-Date"></Field>
+        <Field Type="DateTime" DisplayName="Period Start" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" Group="ThreeWill Columns" FriendlyDisplayFormat="Disabled" ID="{21d15e92-e150-45df-a655-bc73a4bb1b8c}" SourceID="{233000b3-88a5-4ca2-a098-fba9b0a88c25}" StaticName="Period_x0020_Start" Name="Period_x0020_Start">
+        </Field>
+        <Field Type="Number" DisplayName="Actual Hours To-Date" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Decimals="2" Group="ThreeWill Columns" ID="{1abf059a-5bb5-497c-b962-ed61eaeeb6a5}" SourceID="{233000b3-88a5-4ca2-a098-fba9b0a88c25}" StaticName="Actual_x0020_Hours_x0020_To-Date" Name="Actual_x0020_Hours_x0020_To-Date">
+        </Field>
+        <Field Type="DateTime" DisplayName="Period End" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" Group="ThreeWill Columns" FriendlyDisplayFormat="Disabled" ID="{5382b6c9-f256-4989-921b-9859ecb2b9b5}" SourceID="{233000b3-88a5-4ca2-a098-fba9b0a88c25}" StaticName="Period_x0020_End" Name="Period_x0020_End">
+        </Field>
+        <Field Type="DateTime" DisplayName="Next Period End" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateOnly" Group="ThreeWill Columns" FriendlyDisplayFormat="Disabled" ID="{c7b1b7cf-bd7e-4540-9576-d5b7d7d43a02}" SourceID="{233000b3-88a5-4ca2-a098-fba9b0a88c25}" StaticName="Next_x0020_Period_x0020_End" Name="Next_x0020_Period_x0020_End">
+        </Field>
+		</pnp:SiteFields>
+      <pnp:ContentTypes>
+        <pnp:ContentType ID="0x010100CA0B19ACE2032A46B0E45B010F476667" Name="Project Status Report" Description="Content Type for ThreeWill Project Status Reports" Group="ThreeWill Content Types" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="c042a256-787d-4a6f-8a8a-cf6ab767f12d" Name="ContentType" />
+            <pnp:FieldRef ID="5f47e085-2150-41dc-b661-442f3027f552" Name="SelectFilename" />
+            <pnp:FieldRef ID="8553196d-ec8d-4564-9861-3dbe931050c8" Name="FileLeafRef" Required="true" />
+            <pnp:FieldRef ID="8c06beca-0777-48f7-91c7-6da68bc07b69" Name="Created" Hidden="true" />
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" />
+            <pnp:FieldRef ID="28cf69c5-fa48-462a-b5cd-27b6f9d2bd5f" Name="Modified" Hidden="true" />
+            <pnp:FieldRef ID="822c78e3-1ea9-4943-b449-57863ad33ca9" Name="Modified_x0020_By" />
+            <pnp:FieldRef ID="4dd7e525-8d6b-4cb4-9d3e-44ee25f973eb" Name="Created_x0020_By" />
+            <pnp:FieldRef ID="5079442b-3544-421a-a1e7-ba5600f16196" Name="Client" />
+            <pnp:FieldRef ID="d999ce4d-08a0-47da-9013-fddbf6385e6b" Name="Project_x0020_Code" />
+            <pnp:FieldRef ID="351fbb09-047b-412e-9bca-9e66bafd8eb3" Name="Project_x0020_Name" />
+            <pnp:FieldRef ID="21d15e92-e150-45df-a655-bc73a4bb1b8c" Name="Period_x0020_Start" />
+            <pnp:FieldRef ID="5382b6c9-f256-4989-921b-9859ecb2b9b5" Name="Period_x0020_End" />
+            <pnp:FieldRef ID="8d42cd7d-de94-4818-9ea0-93054a3ec239" Name="Next_x0020_Period_x0020_Start" />
+            <pnp:FieldRef ID="c7b1b7cf-bd7e-4540-9576-d5b7d7d43a02" Name="Next_x0020_Period_x0020_End" />
+            <pnp:FieldRef ID="3a61e30c-ce63-4f83-9fec-5e36b0a34232" Name="Budget_x0020_Dollars" />
+            <pnp:FieldRef ID="4c9e6291-2de6-4307-b42d-c5bcea55c4ec" Name="Actual_x0020_Dollars_x0020_To-Date" />
+            <pnp:FieldRef ID="e425aed6-2b95-4811-9a74-1faff8676918" Name="Plan_x0020_Dollars_x0020_To-Date" />
+            <pnp:FieldRef ID="9f256629-e66e-4811-9188-6623c9e4ad5d" Name="Budget_x0020_Hours" />
+            <pnp:FieldRef ID="1abf059a-5bb5-497c-b962-ed61eaeeb6a5" Name="Actual_x0020_Hours_x0020_To-Date" />
+            <pnp:FieldRef ID="6d24cb34-9fe5-40f8-909d-3409e3ae828e" Name="Plan_x0020_Hours_x0020_To-Date" />
+          </pnp:FieldRefs>
+        </pnp:ContentType>
+        <pnp:ContentType ID="0x012000956C11CA2C5B684BA9B1A6572ED35E9A" Name="Status Reports Folder" Description="Folder Content Type for collecting ThreeWill Project Status Reports" Group="ThreeWill Content Types" NewFormUrl="" EditFormUrl="" DisplayFormUrl="">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="c042a256-787d-4a6f-8a8a-cf6ab767f12d" Name="ContentType" />
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" Hidden="true" />
+            <pnp:FieldRef ID="8553196d-ec8d-4564-9861-3dbe931050c8" Name="FileLeafRef" Required="true" />
+            <pnp:FieldRef ID="b824e17e-a1b3-426e-aecf-f0184d900485" Name="ItemChildCount" />
+            <pnp:FieldRef ID="960ff01f-2b6d-4f1b-9c3f-e19ad8927341" Name="FolderChildCount" />
+          </pnp:FieldRefs>
+        </pnp:ContentType>
+	  </pnp:ContentTypes>
+      <pnp:Lists>
+        <pnp:ListInstance Title="Documents" Description="" DocumentTemplate="{site}/Shared Documents/Forms/template.dotx" OnQuickLaunch="true" TemplateType="101" Url="Shared Documents" EnableVersioning="true" EnableMinorVersions="true" MinorVersionLimit="0" MaxVersionLimit="500" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-e717-4e80-aa17-d0c71b360101" ContentTypesEnabled="true" EnableAttachments="false" ListExperience="NewExperience" DefaultDisplayFormUrl="{site}/Shared Documents/Forms/DispForm.aspx" DefaultEditFormUrl="{site}/Shared Documents/Forms/EditForm.aspx" DefaultNewFormUrl="{site}/Shared Documents/Forms/Upload.aspx" ImageUrl="/_layouts/15/images/itdl.png?rev=44" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x0101" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+            <pnp:ContentTypeBinding ContentTypeID="0x010100CA0B19ACE2032A46B0E45B010F476667" />
+            <pnp:ContentTypeBinding ContentTypeID="0x012000956C11CA2C5B684BA9B1A6572ED35E9A" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{30A99CF0-BE3A-473E-93B0-3CB24287B1EA}" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Documents" Url="{site}/Shared Documents/Forms/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/dlicon.png?rev=45">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="FileLeafRef" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Editor" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+            <View Name="{CF3D966E-22D4-499B-AF43-31A073589583}" DefaultView="TRUE" MobileView="TRUE" Type="HTML" DisplayName="Library View" Url="{site}/Shared Documents/Forms/Library View.aspx" Level="1" BaseViewID="1" ContentTypeID="0x012001" ImageUrl="/_layouts/15/images/dlicon.png?rev=45">
+              <Query />
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Editor" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+            <View Name="{B3BBB0F0-88D6-4EC1-BB63-AD63FDC0F6EF}" MobileView="TRUE" DefaultViewForContentType="TRUE" Type="HTML" DisplayName="Status Reports View" Url="{site}/Shared Documents/Forms/Status Reports View.aspx" Level="1" BaseViewID="1" ContentTypeID="0x012000956C11CA2C5B684BA9B1A6572ED35E9A00D1EE2D78E25AFF4BB06F135AA5457436" ImageUrl="/_layouts/15/images/dlicon.png?rev=45">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="FileLeafRef" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Editor" />
+                <FieldRef Name="Period_x0020_Start" />
+                <FieldRef Name="Period_x0020_End" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <Aggregations Value="Off" />
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field ID="{d1cff744-ba61-4189-94d6-97d0a9eb4f6a}" Type="Text" DisplayName="Tags" Name="MediaServiceAutoTags" Group="_Hidden" Hidden="FALSE" Sealed="TRUE" ReadOnly="TRUE" ShowInNewForm="FALSE" ShowInDisplayForm="FALSE" ShowInEditForm="FALSE" ShowInListSettings="FALSE" Viewable="FALSE" Json="FALSE" SourceID="{{listid:Documents}}" StaticName="MediaServiceAutoTags" ColName="nvarchar16" RowOrdinal="0" />
+            <Field ID="{67aff0cf-8e19-43f2-9987-be89075e1467}" Type="Note" DisplayName="Extracted Text" Name="MediaServiceOCR" Group="_Hidden" Hidden="FALSE" Sealed="TRUE" ReadOnly="TRUE" ShowInNewForm="FALSE" ShowInDisplayForm="FALSE" ShowInEditForm="FALSE" ShowInListSettings="FALSE" Viewable="FALSE" Json="FALSE" SourceID="{{listid:Documents}}" StaticName="MediaServiceOCR" ColName="ntext5" RowOrdinal="0" />
+            <Field ID="{1a53ab5a-11f9-4b92-a377-8cfaaf6ba7be}" Name="_DisplayName" DisplaceOnUpgrade="TRUE" Sortable="FALSE" Filterable="FALSE" Hidden="FALSE" ReadOnly="TRUE" ShowInFileDlg="FALSE" Type="Lookup" DisplayName="Sensitivity" List="Docs" ListInternal="IpLabelCache" FieldRef="LabelId" ShowField="DisplayName" LeftList="Docs" LeftColumnName="IpLabelId" JoinColName="LabelId" JoinRowOrdinal="0" JoinType="LEFT OUTER" SchemaVersion="16.0.162.0" RecreateIfMissing="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="_DisplayName" FromBaseType="TRUE" />
+          </pnp:Fields>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="5079442b-3544-421a-a1e7-ba5600f16196" Name="Client" DisplayName="Client" />
+            <pnp:FieldRef ID="d999ce4d-08a0-47da-9013-fddbf6385e6b" Name="Project_x0020_Code" DisplayName="Project Code" />
+            <pnp:FieldRef ID="351fbb09-047b-412e-9bca-9e66bafd8eb3" Name="Project_x0020_Name" DisplayName="Project Name" />
+            <pnp:FieldRef ID="21d15e92-e150-45df-a655-bc73a4bb1b8c" Name="Period_x0020_Start" DisplayName="Period Start" />
+            <pnp:FieldRef ID="5382b6c9-f256-4989-921b-9859ecb2b9b5" Name="Period_x0020_End" DisplayName="Period End" />
+            <pnp:FieldRef ID="8d42cd7d-de94-4818-9ea0-93054a3ec239" Name="Next_x0020_Period_x0020_Start" DisplayName="Next Period Start" />
+            <pnp:FieldRef ID="c7b1b7cf-bd7e-4540-9576-d5b7d7d43a02" Name="Next_x0020_Period_x0020_End" DisplayName="Next Period End" />
+            <pnp:FieldRef ID="3a61e30c-ce63-4f83-9fec-5e36b0a34232" Name="Budget_x0020_Dollars" DisplayName="Budget Dollars" />
+            <pnp:FieldRef ID="4c9e6291-2de6-4307-b42d-c5bcea55c4ec" Name="Actual_x0020_Dollars_x0020_To_x002d_Date" DisplayName="Actual Dollars To-Date" />
+            <pnp:FieldRef ID="e425aed6-2b95-4811-9a74-1faff8676918" Name="Plan_x0020_Dollars_x0020_To_x002d_Date" DisplayName="Plan Dollars To-Date" />
+            <pnp:FieldRef ID="9f256629-e66e-4811-9188-6623c9e4ad5d" Name="Budget_x0020_Hours" DisplayName="Budget Hours" />
+            <pnp:FieldRef ID="1abf059a-5bb5-497c-b962-ed61eaeeb6a5" Name="Actual_x0020_Hours_x0020_To_x002d_Date" DisplayName="Actual Hours To-Date" />
+            <pnp:FieldRef ID="6d24cb34-9fe5-40f8-909d-3409e3ae828e" Name="Plan_x0020_Hours_x0020_To_x002d_Date" DisplayName="Plan Hours To-Date" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>
