@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2018/05/ProvisioningSchema">
-  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=3.0.1808.0, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
-  <pnp:Templates ID="CONTAINER-TEMPLATE-6AA65CC622C34858ADE094F3E6352AEC">
-    <pnp:ProvisioningTemplate ID="TEMPLATE-6AA65CC622C34858ADE094F3E6352AEC" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2021/03/ProvisioningSchema">
+  <pnp:Preferences Generator="PnP.Framework, Version=1.5.43.0, Culture=neutral, PublicKeyToken=null" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-4F5043536EA14B13B5B4BE87145B5668">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-4F5043536EA14B13B5B4BE87145B5668" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
       <pnp:SiteFields>
         <Field Name="RiskCondition" ID="{56e0ce2b-4228-4584-abff-738600ea34ed}" DisplayName="Risk Condition" StaticName="RiskCondition" Group="ThreeWill Columns" Type="Text" Description="Use this column to capture the likely cause of the risk.  Be detailed enough so that you can start forming mitigation plans." Required="False" SourceID="{21074510-31fa-49e7-b042-2353828d5021}" AllowDeletion="TRUE" />
         <Field Name="Notes1" ID="{0d395f31-6147-4396-b20a-0042c93cccff}" StaticName="Notes1" DisplayName="Notes" Group="ThreeWill Columns" RichText="FALSE" Type="Note" Description="Field for notes. Changes are appended to existing text." Required="False" SourceID="{21074510-31fa-49e7-b042-2353828d5021}" AllowDeletion="TRUE" />

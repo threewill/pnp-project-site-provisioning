@@ -13,16 +13,19 @@ $ProgramUrl = "https://threewill.sharepoint.com/teams/$ProjectCode"
 
  try {    
    
-    Write-Host "Connecting to Unified Group Site $ProgramUrl .." -NoNewline
-    Connect-PnPOnline -Url $ProgramUrl -UseWebLogin 
+    Write-Host "Connecting to Site $ProgramUrl .." -NoNewline
+    # Connect-PnPOnline -Url $ProgramUrl -UseWebLogin 
+    $currentContext = Connect-PnPOnline -Url $ProgramUrl -PnPManagementShell -ReturnConnection
     Write-Host "Connected!" -ForegroundColor Green
 
+    Get-PnPSite -Connection $currentContext
+
     Write-Host "Adding standard Risk columns, ctypes, and list..." -NoNewline
-    Apply-PnPProvisioningTemplate -Path ".\risks-template.xml"
+    Invoke-PnPSiteTemplate -Path "./risks-template.xml" -Connection $currentContext
     Write-Host "Completed!" -ForegroundColor Green
 
     Write-Host "Adding standard Status Report columns, ctypes..." -NoNewline
-    Apply-PnPProvisioningTemplate -Path ".\statusreport-template.xml"
+    Invoke-PnPSiteTemplate -Path "./statusreport-template.xml" -Connection $currentContext
     Write-Host "Completed!" -ForegroundColor Green
 }
 catch {

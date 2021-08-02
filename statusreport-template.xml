@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2018/05/ProvisioningSchema">
-  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=2.26.1805.1, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2021/03/ProvisioningSchema">
+  <pnp:Preferences Generator="PnP.Framework, Version=1.5.43.0, Culture=neutral, PublicKeyToken=null" />
   <pnp:Templates ID="CONTAINER-TEMPLATE-B39CF40ABB84404285233B27C1C5815A">
     <pnp:ProvisioningTemplate ID="TEMPLATE-B39CF40ABB84404285233B27C1C5815A" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
       <pnp:SiteFields>
